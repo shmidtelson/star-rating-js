@@ -1,6 +1,3 @@
 import "./index.css";
-declare class MyLibrary {
-    constructor();
-    myMethod: () => boolean;
-}
-export default MyLibrary;
+declare function StarRating(el: HTMLElement): void;
+export default StarRating;

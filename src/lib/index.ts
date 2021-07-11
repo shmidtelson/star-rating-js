@@ -1,14 +1,6 @@
 import "./index.css";
 
-class MyLibrary {
-  constructor() {
-    console.log("Library constructor loaded");
-  }
-
-  myMethod = (): boolean => {
-    console.log("Library method fired");
-    return true;
-  };
+function StarRating(el: HTMLElement) {
+  el.textContent = "HELLO GUYS";
 }
-
-export default MyLibrary;
+export default StarRating;

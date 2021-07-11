@@ -43,7 +43,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/index.css'
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin(
+      {
+        template: "assets/index.html"
+      }
+    ),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.json']

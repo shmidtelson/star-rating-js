@@ -1,6 +1,6 @@
-import "./index.css";
+import './assets/fonts/fontello/css/animation.css'
+import './assets/fonts/fontello/css/fontello.css'
 
-function StarRating(el: HTMLElement) {
-  el.textContent = "HELLO GUYS";
-}
+import { StarRating } from "./star-rating";
+
 export default StarRating;

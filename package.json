@@ -1,7 +1,7 @@
 {
   "name": "@romua1d/star-rating-example",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Clean JavaScript Star Rating Library",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
   "scripts": {
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/shmidtelson/star-rating-js"
   },
-  "author": "",
+  "author": "romua1d <admin@romua1d.ru>",
   "license": "MIT",
   "bugs": {
     "url": ""
   },
-  "homepage": "",
+  "homepage": "https://github.com/shmidtelson/star-rating-js/issues",
   "keywords": [],
   "devDependencies": {
     "@babel/cli": "^7.14.5",

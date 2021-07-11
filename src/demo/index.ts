@@ -1,3 +1,4 @@
 import StarRating from "../lib";
 
-StarRating(document.getElementById('root'))
+
+const sr = new StarRating(document.getElementById('root'), {});

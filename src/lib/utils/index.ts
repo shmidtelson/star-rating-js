@@ -1,3 +1,3 @@
-import {isHexColor, showErrorMessage} from "./helpers";
+import { isHexColor, showErrorMessage } from "./helpers";
 
-export {isHexColor, showErrorMessage}
+export { isHexColor, showErrorMessage };

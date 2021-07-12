@@ -1,3 +1,4 @@
+import "./assets/main.css";
 import {Options} from "./options";
 
 export class View {
@@ -9,15 +10,11 @@ export class View {
         this.htmlElement = htmlElement;
     }
 
-    rerender() {
+    renderStars() {
         this.htmlElement.innerHTML = `
-        <div>
-            <div style="color: ${this.options.starsColor}">
-                <span class="icon-star" data-value="5"></span>
-                <span class="icon-star" data-value="4"></span>
-                <span class="icon-star" data-value="3"></span>
-                <span class="icon-star" data-value="2"></span>
-                <span class="icon-star" data-value="1"></span>
+        <div class="stars-rating${!this.options.disabled ? ' hoverable': ''} ${this.options.uniqueClassName}">
+            <div class="stars-rating--content">
+                ${this._renderSpans(this.options.currentRating)}
             </div>
 <!--            <div class="wpr-rating-loader wpr-hide">-->
 <!--                 <i class="icon-spin4 animate-spin"></i>-->
@@ -26,7 +23,29 @@ export class View {
                 <span>Votes&nbsp;</span>
                 <span class="wpr-total">(Current rating is ${this.options.currentRating})</span>
             </div>
+            <style>
+                .${this.options.uniqueClassName} {
+                    color: ${this.options.starsColorPrimary};
+                }
+              
+                .${this.options.uniqueClassName}.hoverable .icon-star:hover ~ .icon-star:before,
+                .${this.options.uniqueClassName}.hoverable .icon-star:hover:before {
+                  color: ${this.options.starsColorHover};
+                }
+            </style>
         </div>
-        `
+        `;
+    }
+
+    _renderSpans(value: number): string {
+        const list = Array.from(Array(5).keys());
+        let output = '';
+
+        list.reverse().forEach((item) => {
+            const dataValue = item + 1;
+            output += `<span class="icon-star${value === dataValue ? ' checked' : ''}" data-value="${dataValue}"></span>`
+        })
+
+        return output;
     }
 }

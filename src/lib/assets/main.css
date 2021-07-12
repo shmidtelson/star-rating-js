@@ -1,0 +1,87 @@
+.stars-rating {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.stars-rating--content {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+
+    max-width: 200px;
+    font-size: 30px;
+
+    height: 40px;
+    flex-direction: row-reverse;
+}
+
+
+.stars-rating [class^="icon-"]:before, .stars-rating [class*=" icon-"]:before {
+    font-family: "fontello", serif;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .1em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .1em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.stars-rating .icon-star {
+    line-height: 0;
+    display: flex;
+    align-items: center;
+}
+
+.stars-rating .icon-star:before {
+    content: '\e801';
+}
+
+.stars-rating .icon-star:before {
+    position: relative;
+}
+
+
+.stars-rating .icon-star.checked ~ .icon-star:before,
+.stars-rating .icon-star.checked:before {
+    content: "\e800";
+}
+
+.stars-rating.hoverable .icon-star:hover {
+    cursor: pointer;
+}
+
+.stars-rating.hoverable .icon-star:hover .icon-star:before {
+    content: "\e800";
+}
+
+.stars-rating.hoverable .icon-star:hover ~ .icon-star:before,
+.stars-rating.hoverable .icon-star:hover:before {
+    content: "\e800";
+}
+

@@ -7,6 +7,8 @@
 
 <script type="text/javascript">
 const StarRating = window.StarRating.default;
-const StarRatingInstance = new StarRating(document.getElementById('root'));
+const StarRatingInstance = new StarRating(document.getElementById('example1'));
 </script>
+<blockquote>
 <div id="example1"></div>
+</blockquote>

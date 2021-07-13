@@ -1,6 +1,4 @@
 export declare class Options {
-    get disabled(): boolean;
-    set disabled(value: boolean);
     private _currentRating;
     private _starsColorPrimary;
     private _starsColorHover;
@@ -14,4 +12,6 @@ export declare class Options {
     set currentRating(value: number);
     get uniqueClassName(): any;
     set uniqueClassName(value: any);
+    get disabled(): boolean;
+    set disabled(value: boolean);
 }

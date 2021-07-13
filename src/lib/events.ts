@@ -1,4 +1,4 @@
-import {StarRating} from "./star-rating";
+import { StarRating } from "./star-rating";
 
 export class Events {
   htmlElement: HTMLElement;
@@ -16,12 +16,12 @@ export class Events {
   }
 
   clickEventInit() {
-    const elementList = this.htmlElement.querySelectorAll('.icon-star');
+    const elementList = this.htmlElement.querySelectorAll(".icon-star");
 
     for (let i = 0; i < elementList.length; i++) {
       elementList[i].addEventListener("click", (e) => {
         this.starRating.onChange(e);
-      })
+      });
     }
   }
 }

@@ -1,5 +1,5 @@
 import "./assets/main.css";
-import {Options} from "./options";
+import { Options } from "./options";
 
 export class View {
   options: Options;
@@ -24,8 +24,8 @@ export class View {
             <div class="wpr-info-container">
                 <span>Votes&nbsp;</span>
                 <span class="wpr-total">(Current rating is ${
-      this.options.currentRating
-    })</span>
+                  this.options.currentRating
+                })</span>
             </div>
             <style>
                 .${this.options.uniqueClassName} {
@@ -33,11 +33,11 @@ export class View {
                 }
 
                 .${
-      this.options.uniqueClassName
-    }.hoverable .icon-star:hover ~ .icon-star:before,
+                  this.options.uniqueClassName
+                }.hoverable .icon-star:hover ~ .icon-star:before,
                 .${
-      this.options.uniqueClassName
-    }.hoverable .icon-star:hover:before {
+                  this.options.uniqueClassName
+                }.hoverable .icon-star:hover:before {
                   color: ${this.options.starsColorHover};
                 }
             </style>
@@ -46,20 +46,18 @@ export class View {
   }
 
   _renderSpans(value: string | number): string {
-    value = (typeof value === 'string') ? parseInt(value) : value;
-
+    value = typeof value === "string" ? parseInt(value) : value;
 
     const list = Array.from(Array(5).keys());
     let output = "";
-
 
     list.reverse().forEach((item) => {
       const dataValue = item + 1;
 
       output += `
         <span
-            class="icon-star${parseInt(value) === dataValue ? " checked" : " ss"}"
-            data-value="${dataValue}"
+          class="icon-star${value === dataValue ? " checked" : " ss"}"
+          data-value="${dataValue}"
         ></span>`;
     });
 

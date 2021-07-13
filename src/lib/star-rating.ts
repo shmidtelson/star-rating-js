@@ -54,9 +54,15 @@ export class StarRating {
     this.view.renderStars();
   }
 
-  onChange(e: MouseEvent){
-    if (e?.target?.dataset?.value){
-      this.changeRatingValue(e.target.dataset.value)
+  onChange(e: Event) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    if (!e?.target?.dataset?.value) {
+      return;
     }
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    this.changeRatingValue(e.target.dataset.value);
   }
 }

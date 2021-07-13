@@ -6,6 +6,9 @@
 <a href="https://github.com/shmidtelson/star-rating-js/actions"><img alt="Build Status" src="https://github.com/shmidtelson/star-rating-js/workflows/Build/badge.svg?color=green" /></a> <a href="https://github.com/shmidtelson/star-rating-js/actions"> <img alt="Publish Status" src="https://github.com/shmidtelson/star-rating-js/workflows/Publish/badge.svg?color=green" /></a> <img src="https://img.shields.io/david/shmidtelson/star-rating-js.svg" /> <a href="https://david-dm.org/shmidtelson/star-rating-js?type=dev"><img src="https://img.shields.io/david/dev/shmidtelson/star-rating-js.svg" /></a> <img src="https://api.dependabot.com/badges/status?host=github&repo=shmidtelson/star-rating-js" />
 
 </div>
+## Docs
+
+<a href="https://shmidtelson.github.io/star-rating-js/">Here is all docs</a>
 
 ## 🚀 How to use
 

@@ -1,8 +1,10 @@
 import { Options } from "./options";
 import { View } from "./view";
+import { Events } from "./events";
 export declare class StarRating {
     view: View;
     options: Options;
+    events: Events;
     constructor(el: HTMLElement, options: Record<string, any>);
     init(): void;
     /**
@@ -22,4 +24,5 @@ export declare class StarRating {
      *
      */
     changeColor(hex: string): void;
+    onChange(e: Event): void;
 }

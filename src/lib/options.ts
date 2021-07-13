@@ -23,10 +23,6 @@ export class Options {
       this.disabled = options.disabled;
     }
 
-    if ("onChange" in options) {
-        this.onChange = options.onChange;
-    }
-
     this.uniqueClassName = `stars-rating--${uuid4()}`;
   }
 

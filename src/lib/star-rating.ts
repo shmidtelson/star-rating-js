@@ -47,13 +47,17 @@ export class StarRating {
   }
 
   /**
-   *
+   * Handle changing color of stars
    */
   changeColor(hex: string) {
     this.options.starsColorPrimary = hex;
     this.view.renderStars();
   }
 
+  /**
+   * Event, when we click on any star
+   * @param e
+   */
   onChange(e: Event) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

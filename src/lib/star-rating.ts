@@ -1,19 +1,23 @@
 import { Options } from "./options";
 import { View } from "./view";
+import { Events } from "./events";
 
 export class StarRating {
   view: View;
   options: Options;
+  events: Events;
 
   constructor(el: HTMLElement, options: Record<string, any>) {
     this.options = new Options(options);
     this.view = new View(this.options, el);
+    this.events = new Events(el, this);
 
     this.init();
   }
 
   init() {
     this.view.renderStars();
+    this.events.init();
   }
 
   /**
@@ -23,7 +27,7 @@ export class StarRating {
   changeRatingValue(value: number) {
     this.options.currentRating = value;
 
-    this.view.renderStars();
+    this.init();
   }
 
   /**
@@ -31,7 +35,7 @@ export class StarRating {
    */
   disable() {
     this.options.disabled = true;
-    this.view.renderStars();
+    this.init();
   }
 
   /**
@@ -39,7 +43,7 @@ export class StarRating {
    */
   enable() {
     this.options.disabled = false;
-    this.view.renderStars();
+    this.init();
   }
 
   /**
@@ -48,5 +52,11 @@ export class StarRating {
   changeColor(hex: string) {
     this.options.starsColorPrimary = hex;
     this.view.renderStars();
+  }
+
+  onChange(e: MouseEvent){
+    if (e?.target?.dataset?.value){
+      this.changeRatingValue(e.target.dataset.value)
+    }
   }
 }

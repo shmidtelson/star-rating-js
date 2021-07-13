@@ -4,14 +4,6 @@ import { isHexColor, showErrorMessage } from "./utils";
 const tinycolor = require("tinycolor2");
 
 export class Options {
-  get disabled(): boolean {
-    return this._disabled;
-  }
-
-  set disabled(value: boolean) {
-    this._disabled = value;
-  }
-
   private _currentRating = 5;
   private _starsColorPrimary = "#ff0000";
   private _starsColorHover = "#ff8142";
@@ -29,6 +21,10 @@ export class Options {
 
     if ("disabled" in options) {
       this.disabled = options.disabled;
+    }
+
+    if ("onChange" in options) {
+        this.onChange = options.onChange;
     }
 
     this.uniqueClassName = `stars-rating--${uuid4()}`;
@@ -75,5 +71,13 @@ export class Options {
 
   set uniqueClassName(value: any) {
     this._uniqueClassName = value;
+  }
+
+  get disabled(): boolean {
+    return this._disabled;
+  }
+
+  set disabled(value: boolean) {
+    this._disabled = value;
   }
 }

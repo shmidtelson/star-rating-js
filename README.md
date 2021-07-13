@@ -25,7 +25,8 @@ const StarRatingInstance = new StarRating();
 ### self-host/cdn
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/@romua1d/star-rating@latest/build/index.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.js"></script>
 
 const StarRating = window.StarRating.default;
 const StarRatingInstance = new StarRating();

@@ -29,6 +29,6 @@ const StarRatingInstance = new StarRating();
 <script src="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.js"></script>
 
 const StarRating = window.StarRating.default;
-const StarRatingInstance = new StarRating();
+const StarRatingInstance = new StarRating(document.getElementById('someId'));
 ...
 ```

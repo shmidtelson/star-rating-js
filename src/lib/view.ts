@@ -23,6 +23,12 @@ export class View {
           color: ${this.options.starsColorPrimary};
           font-size: ${this.options.size};
         }
+        .${this.options.uniqueClassName} .stars-rating--info-panel {
+          // border-color: ${this.options.starsColorPrimary};
+        }
+        .${this.options.uniqueClassName} .stars-rating--info-panel:before {
+          /*border-right-color: ${this.options.starsColorPrimary};*/
+        }
         .${this.options.uniqueClassName} .icon-star{
           font-size: ${this.options.size};
         }
@@ -35,17 +41,17 @@ export class View {
     `;
   }
 
-  _renderInfoPanel(): string{
+  _renderInfoPanel(): string {
     if (this.options.loader) {
       return ''
     }
 
-    return `
-      <div class="stars-rating--result">
-        <span>Votes&nbsp;</span>
-        <span class="wpr-total"></span>
-      </div>
-    `
+    if (this.options.message !== '') {
+      return `
+        <div class="stars-rating--info-panel">${ this.options.message }</div>
+      `
+    }
+    return '';
   }
   _renderSpin(): string {
     if (!this.options.loader) {

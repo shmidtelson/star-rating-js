@@ -64,6 +64,22 @@ export class StarRating {
   }
 
   /**
+   * Change state loader to opposite
+   */
+  changeLoader() {
+    this.options.loader = !this.options.loader;
+    this.view.renderStars();
+  }
+
+  /**
+   * Change message in infopanel
+   * @param text
+   */
+  changeMessage(text: string) {
+    this.options.message = text;
+    this.view.renderStars();
+  }
+  /**
    * Event, when we click on any star
    * @param e
    */

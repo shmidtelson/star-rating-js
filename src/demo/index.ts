@@ -20,3 +20,4 @@ sr2.onChange = (e) => {
 // @ts-ignore
 new StarRating(document.getElementById('loading'), {loader: true});
 new StarRating(document.getElementById('message'), {message: '41 votes'});
+new StarRating(document.getElementById('disabled'), {disabled: true});

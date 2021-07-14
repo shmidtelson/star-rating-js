@@ -7,16 +7,28 @@
 <script type="text/javascript">
 setTimeout(function () {
 const StarRating = window.StarRating.default;
-const options = {
-  message: '56 votes',
-};
 
-const StarRatingInstance = new StarRating(document.getElementById('example1'), options);
+const StarRatingInstanceMessage = new StarRating(document.getElementById('example1'), {
+    message: '56 votes',
+});
+const StarRatingInstanceLoader = new StarRating(document.getElementById('loading'), {
+    loader: true,
+});
+const StarRatingInstanceDisabled = new StarRating(document.getElementById('disabled'), {
+    disabled: true,
+});
 }, 500);
 </script>
-<blockquote>
+
+### Example 1 (Message)
 <div id="example1"></div>
-</blockquote>
+
+### Example 2 (Loading)
+<div id="loading"></div>
+
+### Example 2 (Disabled)
+<div id="disabled"></div>
+
 
 ## Options
 
@@ -45,7 +57,7 @@ const options = {
 ## Methods of instance
  Method | Description | Arguments
 --- | --- | ---
-`changeRatingValue(value)` | Change how many stars will check | 1-5 |
+`changeRatingValue(value)` | Change how many stars will check | 1-5
 `disable()` | Disable click events      |   -
 `enable()` | Enable click events|    - 
 `changeColor(hex)` | Change current color of widget. Hover color will set up automatic | hex value for example (#000)

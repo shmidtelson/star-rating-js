@@ -7,7 +7,11 @@
 <script type="text/javascript">
 setTimeout(function () {
 const StarRating = window.StarRating.default;
-const StarRatingInstance = new StarRating(document.getElementById('example1'));
+const options = {
+  message: '56 votes',
+};
+
+const StarRatingInstance = new StarRating(document.getElementById('example1'), options);
 }, 500);
 </script>
 <blockquote>

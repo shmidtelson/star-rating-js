@@ -20,10 +20,14 @@
   "author": "romua1d <admin@romua1d.ru>",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/shmidtelson/star-rating-js/issues"
   },
-  "homepage": "https://github.com/shmidtelson/star-rating-js/issues",
-  "keywords": [],
+  "homepage": "https://shmidtelson.github.io/star-rating-js/",
+  "keywords": [
+    "stars",
+    "star",
+    "rating"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",

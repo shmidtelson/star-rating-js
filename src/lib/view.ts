@@ -30,14 +30,13 @@ export class View {
             <style>
                 .${this.options.uniqueClassName} {
                     color: ${this.options.starsColorPrimary};
+                    font-size: ${this.options.size};
                 }
-
-                .${
-                  this.options.uniqueClassName
-                }.hoverable .icon-star:hover ~ .icon-star:before,
-                .${
-                  this.options.uniqueClassName
-                }.hoverable .icon-star:hover:before {
+                .${this.options.uniqueClassName} .icon-star{
+                    font-size: ${this.options.size};
+                }
+                .${this.options.uniqueClassName}.hoverable .icon-star:hover ~ .icon-star:before,
+                .${this.options.uniqueClassName}.hoverable .icon-star:hover:before {
                   color: ${this.options.starsColorHover};
                 }
             </style>
@@ -56,7 +55,7 @@ export class View {
 
       output += `
         <span
-          class="icon-star${value === dataValue ? " checked" : " ss"}"
+          class="icon-star${value === dataValue ? " checked" : ""}"
           data-value="${dataValue}"
         ></span>`;
     });

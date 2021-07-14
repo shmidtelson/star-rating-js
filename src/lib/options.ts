@@ -9,6 +9,7 @@ export class Options {
   private _starsColorHover = "#ff8142";
   private _uniqueClassName = null;
   private _disabled = false;
+  private _size = '16px';
 
   constructor(options: any) {
     if ("starsColor" in options) {
@@ -75,5 +76,13 @@ export class Options {
 
   set disabled(value: boolean) {
     this._disabled = value;
+  }
+
+  get size(): string {
+    return this._size;
+  }
+
+  set size(value: string) {
+    this._size = value;
   }
 }

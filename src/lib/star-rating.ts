@@ -55,6 +55,15 @@ export class StarRating {
   }
 
   /**
+   * Change size of stars
+   * @param size
+   */
+  changeSize(size: string) {
+    this.options.size = size;
+    this.view.renderStars();
+  }
+
+  /**
    * Event, when we click on any star
    * @param e
    */

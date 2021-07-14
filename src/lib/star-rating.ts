@@ -90,6 +90,9 @@ export class StarRating {
    * @param e
    */
   onChange(e: Event) {
+    if (this.options.disabled) {
+      return;
+    }
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     if (!e?.target?.dataset?.value) {

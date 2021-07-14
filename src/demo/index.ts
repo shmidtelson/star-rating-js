@@ -1,4 +1,5 @@
 import StarRating from "../lib";
+import {doc} from "prettier";
 
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -7,13 +8,13 @@ const sr = new StarRating(document.getElementById('root'), {});
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-let sr2 = new StarRating(document.getElementById('secondPlugin'), {
+const sr2 = new StarRating(document.getElementById('change'), {
   currentRating: 4,
-  loader: true,
 });
 
 sr2.onChange = (e) => {
   console.log(e)
   console.log("I did it")
-}
+};
 
+const sr3 = new StarRating(document.getElementById('loading'), {loader: true});

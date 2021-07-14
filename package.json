@@ -1,6 +1,6 @@
 {
   "name": "@romua1d/star-rating-js",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Clean JavaScript Star Rating Library",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",

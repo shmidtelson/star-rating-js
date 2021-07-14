@@ -20,7 +20,7 @@ jobs:
         run: |
           git reset --hard
           git config --local --list
-          git checkout master
+          git checkout production
           git config user.email "$GH_EMAIL"
           git config user.name "Roman Sapezhko"
         env:

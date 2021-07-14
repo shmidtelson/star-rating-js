@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - master
+      - production
 
 jobs:
   publish:
@@ -22,7 +22,7 @@ jobs:
           git config --local --list
           git checkout master
           git config user.email "$GH_EMAIL"
-          git config user.name "Francisco Hodge"
+          git config user.name "Roman Sapezhko"
         env:
           GH_EMAIL: ${{secrets.GH_EMAIL}}
 
@@ -35,7 +35,7 @@ jobs:
           git commit -m "Build update" || true
           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
       - name: npm publish
         run: |

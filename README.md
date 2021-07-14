@@ -1,8 +1,8 @@
-<img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
+<div style="text-align: center">
+<img width="230" src="https://i.imgur.com/iHgtvmg.png" />
 <h2>Star Rating JavaScript Library</h2>
 <blockquote>Simple Kit for organizing your star rating module</blockquote>
 
-<div align="center">
 <img src="https://badgen.net/npm/v/@romua1d/star-rating-js" alt="npm version" />
 <img src="https://badgen.net/npm/dw/@romua1d/star-rating-js"  alt="" />
 <img src="https://badgen.net/npm/license/@romua1d/star-rating-js" alt="" />

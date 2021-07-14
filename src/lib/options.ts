@@ -6,7 +6,7 @@ const tinycolor = require("tinycolor2");
 export class Options {
   private _currentRating = 5;
   private _starsColorPrimary = "#ff0000";
-  private _starsColorHover = "#ff8142";
+  private _starsColorHover = "#ff9999";
   private _uniqueClassName = null;
   private _disabled = false;
   private _size = "16px";

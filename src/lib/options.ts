@@ -9,9 +9,9 @@ export class Options {
   private _starsColorHover = "#ff8142";
   private _uniqueClassName = null;
   private _disabled = false;
-  private _size = '16px';
+  private _size = "16px";
   private _loader = false;
-  private _message = '';
+  private _message = "";
 
   constructor(options: any) {
     if ("starsColor" in options) {

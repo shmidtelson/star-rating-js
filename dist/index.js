@@ -122,6 +122,12 @@ var Options = /*#__PURE__*/function () {
 
     _defineProperty(this, "_disabled", false);
 
+    _defineProperty(this, "_size", "16px");
+
+    _defineProperty(this, "_loader", false);
+
+    _defineProperty(this, "_message", "");
+
     if ("starsColor" in options) {
       this.starsColorPrimary = options.starsColor;
     }
@@ -132,6 +138,18 @@ var Options = /*#__PURE__*/function () {
 
     if ("disabled" in options) {
       this.disabled = options.disabled;
+    }
+
+    if ("size" in options) {
+      this.size = options.size;
+    }
+
+    if ("loader" in options) {
+      this.loader = options.loader;
+    }
+
+    if ("message" in options) {
+      this.message = options.message;
     }
 
     this.uniqueClassName = "stars-rating--".concat((0,uuid__WEBPACK_IMPORTED_MODULE_1__.default)());
@@ -184,6 +202,30 @@ var Options = /*#__PURE__*/function () {
     },
     set: function set(value) {
       this._disabled = value;
+    }
+  }, {
+    key: "size",
+    get: function get() {
+      return this._size;
+    },
+    set: function set(value) {
+      this._size = value;
+    }
+  }, {
+    key: "loader",
+    get: function get() {
+      return this._loader;
+    },
+    set: function set(value) {
+      this._loader = value;
+    }
+  }, {
+    key: "message",
+    get: function get() {
+      return this._message;
+    },
+    set: function set(value) {
+      this._message = value;
     }
   }]);
 
@@ -271,7 +313,7 @@ var StarRating = /*#__PURE__*/function () {
       this.init();
     }
     /**
-     *
+     * Handle changing color of stars
      */
 
   }, {
@@ -280,6 +322,43 @@ var StarRating = /*#__PURE__*/function () {
       this.options.starsColorPrimary = hex;
       this.view.renderStars();
     }
+    /**
+     * Change size of stars
+     * @param size
+     */
+
+  }, {
+    key: "changeSize",
+    value: function changeSize(size) {
+      this.options.size = size;
+      this.view.renderStars();
+    }
+    /**
+     * Change state loader to opposite
+     */
+
+  }, {
+    key: "changeLoader",
+    value: function changeLoader() {
+      this.options.loader = !this.options.loader;
+      this.view.renderStars();
+    }
+    /**
+     * Change message in infopanel
+     * @param text
+     */
+
+  }, {
+    key: "changeMessage",
+    value: function changeMessage(text) {
+      this.options.message = text;
+      this.view.renderStars();
+    }
+    /**
+     * Event, when we click on any star
+     * @param e
+     */
+
   }, {
     key: "onChange",
     value: function onChange(e) {
@@ -380,17 +459,43 @@ var View = /*#__PURE__*/function () {
   _createClass(View, [{
     key: "renderStars",
     value: function renderStars() {
-      this.htmlElement.innerHTML = "\n        <div class=\"stars-rating".concat(!this.options.disabled ? " hoverable" : "", " ").concat(this.options.uniqueClassName, "\">\n            <div class=\"stars-rating--content\">\n                ").concat(this._renderSpans(this.options.currentRating), "\n            </div>\n<!--            <div class=\"wpr-rating-loader wpr-hide\">-->\n<!--                 <i class=\"icon-spin4 animate-spin\"></i>-->\n<!--            </div>-->\n            <div class=\"wpr-info-container\">\n                <span>Votes&nbsp;</span>\n                <span class=\"wpr-total\">(Current rating is ").concat(this.options.currentRating, ")</span>\n            </div>\n            <style>\n                .").concat(this.options.uniqueClassName, " {\n                    color: ").concat(this.options.starsColorPrimary, ";\n                }\n\n                .").concat(this.options.uniqueClassName, ".hoverable .icon-star:hover ~ .icon-star:before,\n                .").concat(this.options.uniqueClassName, ".hoverable .icon-star:hover:before {\n                  color: ").concat(this.options.starsColorHover, ";\n                }\n            </style>\n        </div>\n        ");
+      this.htmlElement.innerHTML = "\n      <div class=\"stars-rating".concat(!this.options.disabled ? " hoverable" : "", " ").concat(this.options.uniqueClassName, "\">\n      <div class=\"stars-rating--content\">\n        ").concat(this._renderSpans(this.options.currentRating), "\n        ").concat(this._renderSpin(), "\n      </div>\n      ").concat(this._renderInfoPanel(), "\n      <style>\n        .").concat(this.options.uniqueClassName, " {\n          color: ").concat(this.options.starsColorPrimary, ";\n          font-size: ").concat(this.options.size, ";\n        }\n        .").concat(this.options.uniqueClassName, " .stars-rating--info-panel {\n          // border-color: ").concat(this.options.starsColorPrimary, ";\n        }\n        .").concat(this.options.uniqueClassName, " .stars-rating--info-panel:before {\n          /*border-right-color: ").concat(this.options.starsColorPrimary, ";*/\n        }\n        .").concat(this.options.uniqueClassName, " .icon-star{\n          font-size: ").concat(this.options.size, ";\n        }\n        .").concat(this.options.uniqueClassName, ".hoverable .icon-star:hover ~ .icon-star:before,\n        .").concat(this.options.uniqueClassName, ".hoverable .icon-star:hover:before {\n          color: ").concat(this.options.starsColorHover, ";\n        }\n      </style>\n    </div>\n    ");
+    }
+  }, {
+    key: "_renderInfoPanel",
+    value: function _renderInfoPanel() {
+      if (this.options.loader) {
+        return "";
+      }
+
+      if (this.options.message !== "") {
+        return "\n        <div class=\"stars-rating--info-panel\">".concat(this.options.message, "</div>\n      ");
+      }
+
+      return "";
+    }
+  }, {
+    key: "_renderSpin",
+    value: function _renderSpin() {
+      if (!this.options.loader) {
+        return "";
+      }
+
+      return "\n    <div class=\"wpr-rating-loader wpr-hide\">\n      <i class=\"icon-spin6 animate-spin\"></i>\n    </div>\n";
     }
   }, {
     key: "_renderSpans",
     value: function _renderSpans(value) {
+      if (this.options.loader) {
+        return "";
+      }
+
       value = typeof value === "string" ? parseInt(value) : value;
       var list = Array.from(Array(5).keys());
       var output = "";
       list.reverse().forEach(function (item) {
         var dataValue = item + 1;
-        output += "\n        <span\n          class=\"icon-star".concat(value === dataValue ? " checked" : " ss", "\"\n          data-value=\"").concat(dataValue, "\"\n        ></span>");
+        output += "\n        <span\n          class=\"icon-star".concat(value === dataValue ? " checked" : "", "\"\n          data-value=\"").concat(dataValue, "\"\n        ></span>");
       });
       return output;
     }
@@ -1864,13 +1969,28 @@ var __webpack_exports__ = {};
   \***************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib */ "./src/lib/index.ts");
+ // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 
-var sr = new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('root'), {});
-window.sr2 = new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('secondPlugin'), {
-  currentRating: 4,
-  onChange: function onChange() {
-    console.log("I did it");
-  }
+new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('root'), {}); // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+
+var sr2 = new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('change'), {
+  currentRating: 4
+});
+
+sr2.onChange = function (e) {
+  console.log(e);
+  console.log("I did it");
+}; // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+
+
+new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('loading'), {
+  loader: true
+});
+new _lib__WEBPACK_IMPORTED_MODULE_0__.default(document.getElementById('message'), {
+  message: '41 votes'
 });
 })();
 

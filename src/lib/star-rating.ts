@@ -7,7 +7,7 @@ export class StarRating {
   options: Options;
   events: Events;
 
-  constructor(el: HTMLElement, options: Record<string, any>) {
+  constructor(el: HTMLElement, options = {}) {
     this.options = new Options(options);
     this.view = new View(this.options, el);
     this.events = new Events(el, this);

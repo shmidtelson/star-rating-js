@@ -12,7 +12,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: "SimpleKeyboardLayouts",
+    library: "StarRating",
     libraryTarget: 'umd',
     clean: true,
     chunkFormat: 'module',

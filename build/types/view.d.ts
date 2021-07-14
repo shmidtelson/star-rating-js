@@ -5,5 +5,7 @@ export declare class View {
     htmlElement: HTMLElement;
     constructor(options: Options, htmlElement: HTMLElement);
     renderStars(): void;
+    _renderInfoPanel(): string;
+    _renderSpin(): string;
     _renderSpans(value: string | number): string;
 }

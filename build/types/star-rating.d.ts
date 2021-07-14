@@ -5,7 +5,7 @@ export declare class StarRating {
     view: View;
     options: Options;
     events: Events;
-    constructor(el: HTMLElement, options: Record<string, any>);
+    constructor(el: HTMLElement, options?: {});
     init(): void;
     /**
      * Changing current rating value
@@ -21,8 +21,26 @@ export declare class StarRating {
      */
     enable(): void;
     /**
-     *
+     * Handle changing color of stars
      */
     changeColor(hex: string): void;
+    /**
+     * Change size of stars
+     * @param size
+     */
+    changeSize(size: string): void;
+    /**
+     * Change state loader to opposite
+     */
+    changeLoader(): void;
+    /**
+     * Change message in infopanel
+     * @param text
+     */
+    changeMessage(text: string): void;
+    /**
+     * Event, when we click on any star
+     * @param e
+     */
     onChange(e: Event): void;
 }

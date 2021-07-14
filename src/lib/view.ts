@@ -12,7 +12,9 @@ export class View {
 
   renderStars() {
     this.htmlElement.innerHTML = `
-      <div class="stars-rating${!this.options.disabled ? " hoverable" : ""} ${this.options.uniqueClassName}">
+      <div class="stars-rating${!this.options.disabled ? " hoverable" : ""} ${
+      this.options.uniqueClassName
+    }">
       <div class="stars-rating--content">
         ${this._renderSpans(this.options.currentRating)}
         ${this._renderSpin()}
@@ -32,7 +34,9 @@ export class View {
         .${this.options.uniqueClassName} .icon-star{
           font-size: ${this.options.size};
         }
-        .${this.options.uniqueClassName}.hoverable .icon-star:hover ~ .icon-star:before,
+        .${
+          this.options.uniqueClassName
+        }.hoverable .icon-star:hover ~ .icon-star:before,
         .${this.options.uniqueClassName}.hoverable .icon-star:hover:before {
           color: ${this.options.starsColorHover};
         }
@@ -43,31 +47,31 @@ export class View {
 
   _renderInfoPanel(): string {
     if (this.options.loader) {
-      return ''
+      return "";
     }
 
-    if (this.options.message !== '') {
+    if (this.options.message !== "") {
       return `
-        <div class="stars-rating--info-panel">${ this.options.message }</div>
-      `
+        <div class="stars-rating--info-panel">${this.options.message}</div>
+      `;
     }
-    return '';
+    return "";
   }
   _renderSpin(): string {
     if (!this.options.loader) {
-      return ''
+      return "";
     }
 
     return `
     <div class="wpr-rating-loader wpr-hide">
       <i class="icon-spin6 animate-spin"></i>
     </div>
-`
+`;
   }
 
   _renderSpans(value: string | number): string {
     if (this.options.loader) {
-      return ''
+      return "";
     }
 
     value = typeof value === "string" ? parseInt(value) : value;

@@ -26,7 +26,7 @@ const StarRatingInstanceDisabled = new StarRating(document.getElementById('disab
 ### Example 2 (Loading)
 <div id="loading"></div>
 
-### Example 2 (Disabled)
+### Example 3 (Disabled)
 <div id="disabled"></div>
 
 

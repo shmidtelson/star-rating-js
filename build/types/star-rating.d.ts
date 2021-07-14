@@ -5,6 +5,7 @@ export declare class StarRating {
     view: View;
     options: Options;
     events: Events;
+    version: string;
     constructor(el: HTMLElement, options?: {});
     init(): void;
     /**

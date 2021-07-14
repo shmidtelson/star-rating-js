@@ -2,12 +2,18 @@ import { Options } from "./options";
 import { View } from "./view";
 import { Events } from "./events";
 
+// @ts-ignore
+import pjson from "../../package.json";
+
 export class StarRating {
   view: View;
   options: Options;
   events: Events;
+  version: string;
 
   constructor(el: HTMLElement, options = {}) {
+    this.version = pjson.version;
+
     this.options = new Options(options);
     this.view = new View(this.options, el);
     this.events = new Events(el, this);

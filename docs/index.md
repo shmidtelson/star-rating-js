@@ -1,8 +1,8 @@
 ## Welcome to Star Rating Library
 
 ## Examples
-<link href="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@romua1d/star-rating-js@latest/build/index.min.js"></script>
 
 
 <script type="text/javascript">

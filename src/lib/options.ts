@@ -10,6 +10,7 @@ export class Options {
   private _uniqueClassName = null;
   private _disabled = false;
   private _size = '16px';
+  private _loader = false;
 
   constructor(options: any) {
     if ("starsColor" in options) {
@@ -22,6 +23,14 @@ export class Options {
 
     if ("disabled" in options) {
       this.disabled = options.disabled;
+    }
+
+    if ("size" in options) {
+      this.size = options.size;
+    }
+
+    if ("loader" in options) {
+      this.loader = options.loader;
     }
 
     this.uniqueClassName = `stars-rating--${uuid4()}`;
@@ -84,5 +93,13 @@ export class Options {
 
   set size(value: string) {
     this._size = value;
+  }
+
+  get loader(): boolean {
+    return this._loader;
+  }
+
+  set loader(value: boolean) {
+    this._loader = value;
   }
 }

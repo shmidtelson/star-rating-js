@@ -9,6 +9,7 @@ const sr = new StarRating(document.getElementById('root'), {});
 // @ts-ignore
 let sr2 = new StarRating(document.getElementById('secondPlugin'), {
   currentRating: 4,
+  loader: true,
 });
 
 sr2.onChange = (e) => {

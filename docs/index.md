@@ -8,13 +8,13 @@
 setTimeout(function () {
 const StarRating = window.StarRating.default;
 
-const StarRatingInstanceMessage = new StarRating(document.getElementById('example1'), {
+new StarRating(document.getElementById('example1'), {
     message: '56 votes',
 });
-const StarRatingInstanceLoader = new StarRating(document.getElementById('loading'), {
+new StarRating(document.getElementById('loading'), {
     loader: true,
 });
-const StarRatingInstanceDisabled = new StarRating(document.getElementById('disabled'), {
+new StarRating(document.getElementById('disabled'), {
     disabled: true,
 });
 }, 500);

@@ -37,3 +37,28 @@ const options = {
   message: '',
 }
 ```
+
+## Methods of instance
+| Method        | Description | Arguments  |
+| ------------- |-------------| -----|
+| `changeRatingValue(value)` | Change how many stars will check | 1-5 |
+| `disable()`      | Disable click events      |   - |
+| `enable()`  | Enable click events|    - |
+| `changeColor(hex)` | Change current color of widget. Hover color will set up automatic | hex value for example (#000) |
+| `changeSize(size)` | Change current size of stars and text | Supports such as font-size |
+| `changeLoader()` | Change state of widget to loading (Show spin) | - |
+| `changeMessage(text) ` |  Set up custom message in infopanel | Some text |
+
+## Events
+### onChange(event)
+```javascript
+// Default change event. U can modify it and add your own logic
+instance.onChange = (event) => {
+  if (!e?.target?.dataset?.value) {
+    return;
+  }
+
+  this.changeRatingValue(e.target.dataset.value);
+}
+
+```

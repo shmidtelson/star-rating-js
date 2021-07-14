@@ -1,8 +1,8 @@
- < align="center">
-    <img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
-  <h2>Star Rating JavaScript Library</h2>
-  <blockquote>Simple Kit for organizing your star rating module</blockquote>
+<img align="center" width="230" src="https://i.imgur.com/iHgtvmg.png" />
+<h2>Star Rating JavaScript Library</h2>
+<blockquote>Simple Kit for organizing your star rating module</blockquote>
 
+<div align="center">
 <img src="https://badgen.net/npm/v/@romua1d/star-rating-js" alt="npm version" />
 <img src="https://badgen.net/npm/dw/@romua1d/star-rating-js"  alt="" />
 <img src="https://badgen.net/npm/license/@romua1d/star-rating-js" alt="" />
@@ -11,6 +11,7 @@
 <img src="https://img.shields.io/david/shmidtelson/star-rating-js.svg" alt="" /> 
 <img src="https://img.shields.io/david/dev/shmidtelson/star-rating-js.svg" alt="" />
 <img src="https://api.dependabot.com/badges/status?host=github&repo=shmidtelson/star-rating-js" alt="" />
+</div>
 
 ## Links
 

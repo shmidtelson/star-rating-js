@@ -24,8 +24,8 @@
 ### npm
 
 ```
-import StarRating from '@romua1d/star-rating';
-const StarRatingInstance = new StarRating();
+import StarRating from '@romua1d/star-rating-js';
+const StarRatingInstance = new StarRating(element);
 ...
 ```
 

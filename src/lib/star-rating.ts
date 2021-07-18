@@ -72,8 +72,15 @@ export class StarRating {
   /**
    * Change state loader to opposite
    */
-  changeLoader() {
-    this.options.loader = !this.options.loader;
+  changeLoader(state = null) {
+    if (state === null) {
+      this.options.loader = !this.options.loader;
+    }
+
+    if (state !== null) {
+      this.options.loader = state === true
+    }
+
     this.view.renderStars();
   }
 

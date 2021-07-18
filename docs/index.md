@@ -69,7 +69,7 @@ const options = {
 | `enable()` | Enable click events | - |
 | `changeColor(hex)` | Change current color of widget. Hover color will set up automatic | hex value for example (#000) |
 | `changeSize(size)` | Change current size of stars and text | Supports such as font-size |
-| `changeLoader()` | Change state of widget to loading (Show spin) If was true it will set up to false and backward | - |
+| `changeLoader(true)` | Change state of widget to loading (Show spin) If was true it will set up to false and backward | default: null (automatic reverse), but you can use true, false |
 | `changeMessage(text)` |  Set up custom message in infopanel | Some text |
 | `changeTextColor(hex)` |  Change current text and border colors | hex value for example (#000) |
 | `changeInfoPanelBackgroundColor(hex)` |  Change current infopanel background`s color | hex value for example (#000) |

@@ -57,7 +57,7 @@ export class View {
 
     if (this.options.message !== "") {
       return `
-        <div class="stars-rating--info-panel">${this.options.message}</div>
+        <div class="stars-rating--info-panel"><span>${this.options.message}</span></div>
       `;
     }
     return "";

@@ -85,6 +85,25 @@ export class StarRating {
     this.options.message = text;
     this.view.renderStars();
   }
+
+  /**
+   * Change current text and border colors
+   * @param color
+   */
+  changeTextColor(color: string) {
+    this.options.textColor = color;
+    this.view.renderStars();
+  }
+
+  /**
+   * Change current infopanel background`s color
+   * @param color
+   */
+  changeInfoPanelBackgroundColor(color: string) {
+    this.options.infoPanelBackgroundColor = color;
+    this.view.renderStars();
+  }
+
   /**
    * Event, when we click on any star
    * @param e

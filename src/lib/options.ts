@@ -6,12 +6,14 @@ const tinycolor = require("tinycolor2");
 export class Options {
   private _currentRating = 5;
   private _starsColorPrimary = "#ff0000";
-  private _starsColorHover = "#ff9999";
+  private _starsColorHover = "#cc0000";
   private _uniqueClassName = null;
   private _disabled = false;
   private _size = "16px";
   private _loader = false;
   private _message = "";
+  private _textColor = "#848484";
+  private _infoPanelBackgroundColor = "#ffffff";
 
   constructor(options: any) {
     if ("starsColor" in options) {
@@ -38,6 +40,14 @@ export class Options {
       this.message = options.message;
     }
 
+    if ("textColor" in options) {
+      this.textColor = options.textColor;
+    }
+
+    if ("infoPanelBackgroundColor" in options) {
+      this.infoPanelBackgroundColor = options.infoPanelBackgroundColor;
+    }
+
     this.uniqueClassName = `stars-rating--${uuid4()}`;
   }
 
@@ -54,7 +64,7 @@ export class Options {
     }
 
     this._starsColorPrimary = hex;
-    this._starsColorHover = tinycolor(hex).lighten(30).toString();
+    this._starsColorHover = tinycolor(hex).darken(10).toString();
   }
 
   get starsColorHover(): string {
@@ -114,5 +124,35 @@ export class Options {
 
   set message(value: string) {
     this._message = value;
+  }
+
+  get textColor(): string {
+    return this._textColor;
+  }
+
+  set textColor(hex: string) {
+    if (!isHexColor(hex)) {
+      showErrorMessage(
+        ` Error with validation hex color, current value is ${hex}, but i wait for example #000`
+      );
+      return;
+    }
+
+    this._textColor = hex;
+  }
+
+  get infoPanelBackgroundColor(): string {
+    return this._infoPanelBackgroundColor;
+  }
+
+  set infoPanelBackgroundColor(hex: string) {
+    if (!isHexColor(hex)) {
+      showErrorMessage(
+        ` Error with validation hex color, current value is ${hex}, but i wait for example #000`
+      );
+      return;
+    }
+
+    this._infoPanelBackgroundColor = hex;
   }
 }

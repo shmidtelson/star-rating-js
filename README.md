@@ -1,4 +1,5 @@
 <div style="text-align: center">
+<img src="./assets/screenshot1.png" />
 <h2>Star Rating JavaScript Library</h2>
 <blockquote>Simple Kit for organizing your star rating module</blockquote>
 
@@ -14,7 +15,9 @@
 
 ## Links
 
-<a href="https://shmidtelson.github.io/star-rating-js/"><b>DOCs</b></a> | <a href="https://www.npmjs.com/package/@romua1d/star-rating-js"><b>NPM</b></a>
+<a href="https://shmidtelson.github.io/star-rating-js/"><b>DOCs</b></a> | 
+<a href="https://www.npmjs.com/package/@romua1d/star-rating-js"><b>NPM</b></a> |
+<a href="https://github.com/shmidtelson/star-rating-js"><b>GitHub</b></a>
 
 ## 🚀 How to use
 

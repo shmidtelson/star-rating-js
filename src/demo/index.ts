@@ -16,3 +16,4 @@ sr2.onChange = (e) => {
 new StarRating(document.getElementById('loading'), {loader: true});
 new StarRating(document.getElementById('message'), {message: '41 votes'});
 new StarRating(document.getElementById('disabled'), {disabled: true});
+new StarRating(document.getElementById('textcolor'), {message: '45 votes', textColor: "#000000"});

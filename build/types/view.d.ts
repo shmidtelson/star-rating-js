@@ -1,4 +1,4 @@
-import "./assets/main.css";
+import "./assets/main.scss";
 import { Options } from "./options";
 export declare class View {
     options: Options;

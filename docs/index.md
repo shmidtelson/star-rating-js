@@ -37,8 +37,11 @@ const options = {
   // How many stars has been chosen
   currentRating: 5,
   
-  // Current color of stars and text. Hover color is automatically set Darker, for default value = #cc0000
+  // Current color of stars. Hover color is automatically set Darker, for default value = #cc0000
   starsColor: '#ff0000',
+  
+  // Current color of text and border of infopanel. 
+  textColor: '#848484', 
   
   // Disable stars widget for click events
   disabled: false,

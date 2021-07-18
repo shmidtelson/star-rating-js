@@ -1,4 +1,4 @@
-import "./assets/main.css";
+import "./assets/main.scss";
 import { Options } from "./options";
 
 export class View {
@@ -26,10 +26,11 @@ export class View {
           font-size: ${this.options.size};
         }
         .${this.options.uniqueClassName} .stars-rating--info-panel {
-          // border-color: ${this.options.starsColorPrimary};
+          color: ${this.options.textColor};
+          border: 1px solid ${this.options.textColor};
         }
         .${this.options.uniqueClassName} .stars-rating--info-panel:before {
-          /*border-right-color: ${this.options.starsColorPrimary};*/
+          border-right-color: ${this.options.textColor}
         }
         .${this.options.uniqueClassName} .icon-star{
           font-size: ${this.options.size};

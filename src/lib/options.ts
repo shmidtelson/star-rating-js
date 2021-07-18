@@ -6,12 +6,13 @@ const tinycolor = require("tinycolor2");
 export class Options {
   private _currentRating = 5;
   private _starsColorPrimary = "#ff0000";
-  private _starsColorHover = "#ff9999";
+  private _starsColorHover = "#cc0000";
   private _uniqueClassName = null;
   private _disabled = false;
   private _size = "16px";
   private _loader = false;
   private _message = "";
+  private _textColor = "#848484";
 
   constructor(options: any) {
     if ("starsColor" in options) {
@@ -36,6 +37,10 @@ export class Options {
 
     if ("message" in options) {
       this.message = options.message;
+    }
+
+    if ("textColor" in options) {
+      this.textColor = options.textColor;
     }
 
     this.uniqueClassName = `stars-rating--${uuid4()}`;
@@ -114,5 +119,20 @@ export class Options {
 
   set message(value: string) {
     this._message = value;
+  }
+
+  get textColor(): string {
+    return this._textColor;
+  }
+
+  set textColor(hex: string) {
+    if (!isHexColor(hex)) {
+      showErrorMessage(
+        ` Error with validation hex color, current value is ${hex}, but i wait for example #000`
+      );
+      return;
+    }
+
+    this._textColor = hex;
   }
 }

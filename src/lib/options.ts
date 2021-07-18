@@ -54,7 +54,7 @@ export class Options {
     }
 
     this._starsColorPrimary = hex;
-    this._starsColorHover = tinycolor(hex).lighten(30).toString();
+    this._starsColorHover = tinycolor(hex).darken(10).toString();
   }
 
   get starsColorHover(): string {

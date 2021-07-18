@@ -1,5 +1,4 @@
 <div style="text-align: center">
-<img width="230" src="https://i.imgur.com/iHgtvmg.png" />
 <h2>Star Rating JavaScript Library</h2>
 <blockquote>Simple Kit for organizing your star rating module</blockquote>
 

@@ -1,6 +1,8 @@
 import StarRating from "../lib";
 
-new StarRating(document.getElementById('root'), {});
+new StarRating(document.getElementById('root'), {
+  starsColor: '#ff0000',
+});
 
 const sr2 = new StarRating(document.getElementById('change'), {
   currentRating: 4,

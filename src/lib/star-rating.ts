@@ -78,7 +78,7 @@ export class StarRating {
     }
 
     if (state !== null) {
-      this.options.loader = state === true
+      this.options.loader = state === true;
     }
 
     this.view.renderStars();

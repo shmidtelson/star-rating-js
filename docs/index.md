@@ -60,7 +60,7 @@ const options = {
 }
 ```
 
-## Methods of instance
+## Methods of instance  
 
 | Method | Description | Arguments |
 | --- | --- | --- |

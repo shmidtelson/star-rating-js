@@ -29,6 +29,7 @@ export class View {
           color: ${this.options.textColor};
           border: 1px solid ${this.options.textColor};
           background: ${this.options.infoPanelBackgroundColor};
+          font-size: calc(${this.options.size} - 20%);
         }
         .${this.options.uniqueClassName} .stars-rating--info-panel:before {
           border-right-color: ${this.options.textColor}

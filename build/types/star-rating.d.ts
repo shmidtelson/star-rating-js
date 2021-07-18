@@ -40,6 +40,16 @@ export declare class StarRating {
      */
     changeMessage(text: string): void;
     /**
+     * Change current text and border colors
+     * @param color
+     */
+    changeTextColor(color: string): void;
+    /**
+     * Change current infopanel background`s color
+     * @param color
+     */
+    changeInfoPanelBackgroundColor(color: string): void;
+    /**
      * Event, when we click on any star
      * @param e
      */

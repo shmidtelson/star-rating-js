@@ -28,9 +28,13 @@ export class View {
         .${this.options.uniqueClassName} .stars-rating--info-panel {
           color: ${this.options.textColor};
           border: 1px solid ${this.options.textColor};
+          background: ${this.options.infoPanelBackgroundColor};
         }
         .${this.options.uniqueClassName} .stars-rating--info-panel:before {
           border-right-color: ${this.options.textColor}
+        }
+        .${this.options.uniqueClassName} .stars-rating--info-panel:after {
+          border-right-color: ${this.options.infoPanelBackgroundColor};
         }
         .${this.options.uniqueClassName} .icon-star{
           font-size: ${this.options.size};

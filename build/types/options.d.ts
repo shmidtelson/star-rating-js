@@ -8,6 +8,7 @@ export declare class Options {
     private _loader;
     private _message;
     private _textColor;
+    private _infoPanelBackgroundColor;
     constructor(options: any);
     get starsColorPrimary(): string;
     set starsColorPrimary(hex: string);
@@ -26,4 +27,6 @@ export declare class Options {
     set message(value: string);
     get textColor(): string;
     set textColor(hex: string);
+    get infoPanelBackgroundColor(): string;
+    set infoPanelBackgroundColor(hex: string);
 }

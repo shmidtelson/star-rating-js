@@ -13,6 +13,7 @@ export class Options {
   private _loader = false;
   private _message = "";
   private _textColor = "#848484";
+  private _infoPanelBackgroundColor = "#ffffff";
 
   constructor(options: any) {
     if ("starsColor" in options) {
@@ -41,6 +42,10 @@ export class Options {
 
     if ("textColor" in options) {
       this.textColor = options.textColor;
+    }
+
+    if ("infoPanelBackgroundColor" in options) {
+      this.infoPanelBackgroundColor = options.infoPanelBackgroundColor;
     }
 
     this.uniqueClassName = `stars-rating--${uuid4()}`;
@@ -134,5 +139,20 @@ export class Options {
     }
 
     this._textColor = hex;
+  }
+
+  get infoPanelBackgroundColor(): string {
+    return this._infoPanelBackgroundColor;
+  }
+
+  set infoPanelBackgroundColor(hex: string) {
+    if (!isHexColor(hex)) {
+      showErrorMessage(
+        ` Error with validation hex color, current value is ${hex}, but i wait for example #000`
+      );
+      return;
+    }
+
+    this._infoPanelBackgroundColor = hex;
   }
 }
